@@ -17,7 +17,9 @@ body {
 }
 
 .hero-bg {
-  background-image: linear-gradient(rgba(10, 10, 15, 0.68), rgba(10, 10, 15, 0.75)), url('https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/2b8499e8-2306-4279-c831-308432848700/public');
+  background: radial-gradient(ellipse at 50% 0%, rgba(34, 245, 255, 0.10) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 40%, rgba(168, 85, 247, 0.07) 0%, transparent 50%),
+              #0a0a0f;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
