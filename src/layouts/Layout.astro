@@ -1,0 +1,107 @@
+---
+import '@/styles/global.css';
+import SEO from '@/components/SEO.astro';
+import StructuredData from '@/components/StructuredData.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  structuredData?: Record<string, any>;
+  image?: string;
+}
+
+const { title, description, structuredData, image } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="https://secureaiframeworks.design/" />
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://imagedelivery.net" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <title>{title}</title>
+
+  <SEO title={title} description={description} image={image} />
+  {structuredData && <StructuredData data={structuredData} />}
+</head>
+<body class="bg-[#0a0a0f] text-white overflow-x-hidden">
+  <slot name="header" />
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <!-- Domain Acquisition CTA -->
+      <div class="bg-gradient-to-b from-white/[0.03] to-white/[0.06] rounded-3xl p-8 md:p-10 mb-8 text-center border border-white/10">
+        <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-5">
+          <div class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></div>
+          <span class="text-xs font-semibold tracking-[1.5px] text-white/80">PREMIUM DOMAIN AVAILABLE FOR ACQUISITION</span>
+        </div>
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 font-display tracking-tight">
+          Acquire secureaiframeworks.design
+        </h3>
+        <p class="text-white/60 max-w-lg mx-auto mb-8 leading-relaxed">
+          A premium, category-owning domain at the intersection of AI security and intentional design. Perfect for companies, platforms, and consultancies building trustworthy, well-crafted AI products. Short, authoritative, and instantly credible.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="mailto:sales@desertrich.com?subject=Acquisition%20Inquiry%20-%20secureaiframeworks.design&body=Hello,%0D%0A%0D%0AI%20am%20interested%20in%20acquiring%20secureaiframeworks.design.%20Please%20provide%20details%20and%20next%20steps.%0D%0A%0D%0ABest%20regards," class="inline-flex items-center justify-center gap-x-2 px-8 py-3 bg-gradient-to-r from-accent to-accent-purple hover:brightness-105 text-[#0a0a0f] font-semibold rounded-xl transition-all active:scale-[0.985] shadow-lg shadow-accent/20">
+            <span>Inquire: sales@desertrich.com</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7-7 7M3 12h18"></path>
+            </svg>
+          </a>
+          <button id="copyEmailBtn" class="inline-flex items-center justify-center gap-x-2 px-6 py-3 border border-white/20 hover:bg-white/5 text-white/80 font-medium rounded-xl transition-all text-sm" onclick="copyEmail()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            <span>Copy Email</span>
+          </button>
+        </div>
+        <p class="mt-5 text-xs text-white/40">
+          Serious inquiries only. Full ownership transfer via secure escrow (Escrow.com).
+        </p>
+      </div>
+
+      <!-- Disclaimer + Bottom -->
+      <div class="border-t border-white/10 pt-8">
+        <p class="text-xs text-white/40 mb-6 leading-relaxed max-w-3xl">
+          <strong class="text-white/50">Disclaimer:</strong> This website is for demonstration and informational purposes only. It does not constitute an offer of services, a commitment to deploy, or a guarantee of outcomes. All statistics, projections, and references to specific technologies are based on publicly available information as of the date shown and are subject to change.
+        </p>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-3 text-xs text-white/40">
+          <div>
+            <p>&copy; 2026 secureaiframeworks.design &mdash; Secure frameworks. Thoughtful design.</p>
+          </div>
+          <div class="flex items-center gap-x-4">
+            <span>Premium domain</span>
+            <span class="hidden md:inline">&bull;</span>
+            <span>One-time acquisition</span>
+            <span class="hidden md:inline">&bull;</span>
+            <span>Full ownership transfer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyEmail() {
+      navigator.clipboard.writeText('sales@desertrich.com').then(() => {
+        const btn = document.getElementById('copyEmailBtn');
+        if (!btn) return;
+        const original = btn.innerHTML;
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg><span>Copied!</span>';
+        setTimeout(() => { btn.innerHTML = original; }, 2200);
+      });
+    }
+  </script>
+</body>
+</html>
