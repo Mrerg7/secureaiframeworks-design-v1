@@ -1,6 +1,2 @@
 /index.html / 301
 /favicon.ico /favicon.svg 301
-
-# Redirect alternate hostnames to canonical domain
-https://www.secureaiframeworks.design/* https://secureaiframeworks.design/:splat 301
-https://secureaiframeworks-design-v1.pages.dev/* https://secureaiframeworks.design/:splat 301
