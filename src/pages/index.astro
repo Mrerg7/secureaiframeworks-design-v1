@@ -1,15 +1,47 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 
-const pageTitle = 'secureaiframeworks.design | Secure AI Frameworks & Design — Premium Domain';
-const pageDescription = 'secureaiframeworks.design — The definitive domain for secure AI frameworks and design systems. A premium, high-conversion landing page for enterprise AI security, responsible design, guardrails, and trustworthy AI product development.';
+const pageTitle = 'secureaiframeworks.design | Premium Domain for Sale | secureaiframeworks.design';
+const pageDescription = 'secureaiframeworks.design is a premium domain for sale at $100,000. Own a category-defining name for secure AI frameworks, responsible design, and trustworthy AI products.';
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'secureaiframeworks.design',
-  url: 'https://secureaiframeworks.design/',
-  description: pageDescription,
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'secureaiframeworks.design',
+      url: 'https://secureaiframeworks.design/',
+      email: 'sales@desertrich.com',
+    },
+    {
+      '@type': 'Product',
+      name: 'secureaiframeworks.design',
+      description: pageDescription,
+      category: 'Premium domain name',
+      brand: {
+        '@type': 'Brand',
+        name: 'secureaiframeworks.design',
+      },
+      offers: {
+        '@type': 'Offer',
+        url: 'https://secureaiframeworks.design/#pricing',
+        price: '100000',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        itemCondition: 'https://schema.org/NewCondition',
+        seller: {
+          '@type': 'Organization',
+          name: 'secureaiframeworks.design',
+        },
+      },
+    },
+    {
+      '@type': 'WebSite',
+      name: 'secureaiframeworks.design',
+      url: 'https://secureaiframeworks.design/',
+      description: pageDescription,
+    },
+  ],
 };
 ---
 
@@ -97,10 +129,15 @@ const structuredData = {
         with intention and elegance.
       </p>
 
+      <div class="inline-flex flex-col sm:flex-row items-center gap-x-3 gap-y-1 mb-10 rounded-2xl border border-white/15 bg-black/20 px-6 py-3">
+        <span class="text-xs uppercase tracking-[1.5px] text-white/50">Available now</span>
+        <span class="text-2xl font-semibold tracking-tight text-white">$100,000 <span class="text-sm font-normal text-white/50">USD</span></span>
+      </div>
+
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="#inquire" class="group w-full sm:w-auto inline-flex items-center justify-center gap-x-3 px-9 py-4 text-lg font-semibold rounded-3xl bg-gradient-to-r from-accent to-accent-purple text-[#0a0a0f] hover:brightness-105 active:scale-[0.985] transition-all shadow-xl shadow-accent/20">
-          <span>Secure This Asset</span>
+          <span>Buy This Domain</span>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M14 5l7 7-7 7m-4-7h11" />
           </svg>
@@ -291,7 +328,7 @@ const structuredData = {
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-8">
         <div>
           <div class="flex items-baseline gap-x-2">
-            <span class="text-6xl md:text-7xl font-semibold tracking-tighter">$13,997</span>
+            <span class="text-6xl md:text-7xl font-semibold tracking-tighter">$100,000</span>
             <span class="text-white/50 text-xl">USD</span>
           </div>
           <p class="mt-1 text-white/60">One-time acquisition • Full ownership &amp; instant transfer</p>
@@ -359,7 +396,7 @@ const structuredData = {
             <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5">YOUR OFFER (OPTIONAL)</label>
             <div class="relative">
               <span class="absolute left-5 top-1/2 -translate-y-1/2 text-white/40">$</span>
-              <input type="text" id="offer" placeholder="13997" class="form-input w-full bg-white/5 border border-white/15 rounded-2xl pl-8 pr-5 py-3.5 text-white placeholder:text-white/40 focus:border-accent/60" />
+              <input type="text" id="offer" placeholder="100000" class="form-input w-full bg-white/5 border border-white/15 rounded-2xl pl-8 pr-5 py-3.5 text-white placeholder:text-white/40 focus:border-accent/60" />
             </div>
           </div>
           <div>
@@ -386,18 +423,6 @@ const structuredData = {
         <p class="text-center text-xs text-white/50 tracking-wide">Your information is kept confidential. All transactions protected via escrow.</p>
       </form>
 
-      <!-- Success Message (hidden by default) -->
-      <div id="success-message" class="hidden mt-6 glass rounded-3xl p-8 border border-emerald-400/30 text-center">
-        <div class="mx-auto w-14 h-14 rounded-full bg-emerald-400/10 flex items-center justify-center mb-5">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V3" />
-          </svg>
-        </div>
-        <h3 class="text-2xl font-semibold tracking-tight mb-2">Inquiry Received</h3>
-        <p class="text-white/70 max-w-xs mx-auto">Thank you. A member of our team will personally respond within 24 hours to discuss next steps.</p>
-        <button onclick="resetForm()" class="mt-6 text-sm font-medium text-white/60 hover:text-white underline underline-offset-4">Submit another inquiry</button>
-      </div>
     </div>
   </section>
 
@@ -470,44 +495,31 @@ const structuredData = {
   // Form handling
   function initForm() {
     const form = document.getElementById('inquiry-form') as HTMLFormElement;
-    const successMsg = document.getElementById('success-message');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Processing...';
+      const name = (document.getElementById('name') as HTMLInputElement).value.trim();
+      const email = (document.getElementById('email') as HTMLInputElement).value.trim();
+      const org = (document.getElementById('org') as HTMLInputElement).value.trim();
+      const offer = (document.getElementById('offer') as HTMLInputElement).value.trim();
+      const timeline = (document.getElementById('timeline') as HTMLSelectElement).value;
+      const message = (document.getElementById('message') as HTMLTextAreaElement).value.trim();
+      const subject = encodeURIComponent(`Domain acquisition inquiry — ${name}`);
+      const body = encodeURIComponent([
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Organization or intended use: ${org || 'Not provided'}`,
+        `Offer: ${offer ? `$${offer}` : 'Asking price: $100,000'}`,
+        `Timeline: ${timeline || 'Not provided'}`,
+        '',
+        message || 'Please share the next steps for acquiring secureaiframeworks.design.',
+      ].join('\n'));
+
+      submitBtn.innerHTML = 'Opening secure email...';
       submitBtn.disabled = true;
-
-      setTimeout(() => {
-        form.style.display = 'none';
-        successMsg!.classList.remove('hidden');
-        successMsg!.classList.add('block');
-
-        console.log('%c[secureaiframeworks.design] New inquiry submitted:', 'color:#64748b', {
-          name: (document.getElementById('name') as HTMLInputElement).value,
-          email: (document.getElementById('email') as HTMLInputElement).value,
-          org: (document.getElementById('org') as HTMLInputElement).value,
-          offer: (document.getElementById('offer') as HTMLInputElement).value,
-          timeline: (document.getElementById('timeline') as HTMLSelectElement).value,
-          message: (document.getElementById('message') as HTMLTextAreaElement).value,
-        });
-      }, 850);
+      window.location.href = `mailto:sales@desertrich.com?subject=${subject}&body=${body}`;
     });
-  }
-
-  function resetForm() {
-    const form = document.getElementById('inquiry-form') as HTMLFormElement;
-    const successMsg = document.getElementById('success-message');
-    successMsg!.classList.add('hidden');
-    successMsg!.classList.remove('block');
-    form.style.display = 'block';
-    form.reset();
-    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Submit Secure Inquiry';
-    }
   }
 
   // Keyboard accessibility
